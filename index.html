@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DevOps Expert | Solutions Cloud & Automation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-circle"></div>
+                <div class="logo-pulse"></div>
+            </div>
+            <p>Chargement des solutions DevOps...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo"></div>
+                <span>DevOpsExpert</span>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#accueil" class="nav-link active" data-scroll>Accueil</a>
+                <a href="#projets" class="nav-link" data-scroll>Projets</a>
+                <a href="#expertise" class="nav-link" data-scroll>Expertise</a>
+                <a href="#apropos" class="nav-link" data-scroll>À propos</a>
+                <a href="#contact" class="nav-link" data-scroll>Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <div class="theme-toggle-wrapper">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <a href="#contact" class="cta-nav">Discutons</a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">
+                        <span>🚀 Disponible pour missions</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Solutions</span>
+                        <span class="title-line gradient-text">DevOps & Cloud</span>
+                        <span class="title-line">sur Mesure</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        J'optimise vos infrastructures, automatise vos déploiements et accélère votre time-to-market avec des solutions cloud scalables.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Projets livrés</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="99">0</span>
+                            <span class="stat-label">% Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-label">Heures support</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projets" class="cta-button primary">
+                            <span>Voir mes réalisations</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="#contact" class="cta-button secondary">
+                            <span>Démarrer un projet</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span class="terminal-title">terminal — DevOps</span>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">terraform apply</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>✅ Infrastructure AWS créée</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">docker-compose up -d</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>🚀 Containers déployés</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">kubectl get pods</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>📊 Tous les services opérationnels</span>
+                            </div>
+                            <div class="terminal-line typing">
+                                <span class="prompt">$</span>
+                                <span class="command typed-text"></span>
+                                <span class="cursor">|</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projets" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Réalisations DevOps</h2>
+                <p>Des solutions d'infrastructure qui transforment votre façon de déployer</p>
+                
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all" aria-label="Voir tous les projets">Tous</button>
+                    <button class="filter-btn" data-filter="devops" aria-label="Filtrer les projets DevOps">DevOps</button>
+                    <button class="filter-btn" data-filter="cloud" aria-label="Filtrer les projets Cloud">Cloud</button>
+                    <button class="filter-btn" data-filter="automation" aria-label="Filtrer les projets Automation">Automation</button>
+                    <button class="filter-btn" data-filter="ci-cd" aria-label="Filtrer les projets CI/CD">CI/CD</button>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="project-card" data-category="devops ci-cd">
+                    <div class="project-image">
+                        <div class="project-badge">CI/CD</div>
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pipeline CI/CD" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Pipeline CI/CD Enterprise</h3>
+                        <p>Pipeline Jenkins/GitLab CI automatisé avec tests, sécurité et déploiement blue-green sur Kubernetes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Jenkins</span>
+                            <span class="tech-tag">K8s</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card" data-category="cloud automation">
+                    <div class="project-image">
+                        <div class="project-badge">Infra as Code</div>
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Infrastructure Cloud" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Infrastructure AWS Terraform</h3>
+                        <p>Architecture multi-région avec VPC, EKS, RDS et services managés, entièrement versionnée.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">EKS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Docs
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card" data-category="devops monitoring">
+                    <div class="project-image">
+                        <div class="project-badge">Monitoring</div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dashboard Monitoring" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Stack Monitoring Prometheus</h3>
+                        <p>Solution complète de monitoring avec alerting, Grafana et intégration Slack/Teams.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Alertmanager</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card" data-category="cloud automation">
+                    <div class="project-image">
+                        <div class="project-badge">Cloud</div>
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Architecture Cloud" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Migration vers Azure</h3>
+                        <p>Migration complète d'infrastructure on-premise vers Azure avec optimisation des coûts.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">Kubernetes</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2>Expertise Technique</h2>
+                <p>Maîtrise des outils et méthodologies DevOps modernes</p>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3>Containerisation</h3>
+                    <p>Docker, Docker Compose, Best practices d'image, Sécurité containers</p>
+                    <div class="expertise-level">
+                        <div class="level-bar">
+                            <div class="level-progress" data-level="95"></div>
+                        </div>
+                        <span>95%</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud AWS</h3>
+                    <p>EC2, S3, RDS, EKS, Lambda, IAM, VPC, Cost Optimization</p>
+                    <div class="expertise-level">
+                        <div class="level-bar">
+                            <div class="level-progress" data-level="88"></div>
+                        </div>
+                        <span>88%</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>CI/CD</h3>
+                    <p>Jenkins, GitLab CI, GitHub Actions, Quality Gates, Security Scanning</p>
+                    <div class="expertise-level">
+                        <div class="level-bar">
+                            <div class="level-progress" data-level="92"></div>
+                        </div>
+                        <span>92%</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Infra as Code</h3>
+                    <p>Terraform, CloudFormation, Ansible, Packer, Versioning</p>
+                    <div class="expertise-level">
+                        <div class="level-bar">
+                            <div class="level-progress" data-level="90"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>DevSecOps</h3>
+                    <p>Security scanning, Compliance, IAM, Network security, Audits</p>
+                    <div class="expertise-level">
+                        <div class="level-bar">
+                            <div class="level-progress" data-level="85"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Monitoring & Observability</h3>
+                    <p>Prometheus, Grafana, ELK Stack, CloudWatch, Log management</p>
+                    <div class="expertise-level">
+                        <div class="level-bar">
+                            <div class="level-progress" data-level="87"></div>
+                        </div>
+                        <span>87%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Passionné par l'Excellence DevOps</h2>
+                    <p>
+                        Je transforme des challenges techniques en solutions robustes et scalables. 
+                        Mon expertise couvre l'automatisation, le cloud et les meilleures pratiques DevOps.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Sécurité & Fiabilité</h4>
+                                <p>Architectures sécurisées dès la conception avec mise en place de politiques de sécurité et de monitoring continu</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Performance</h4>
+                                <p>Optimisation des coûts et des performances avec des architectures cloud efficientes et scalables</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-sync-alt"></i>
+                            <div>
+                                <h4>Automatisation</h4>
+                                <p>Automatisation complète des processus de déploiement, testing et monitoring pour une livraison continue</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Collaboration</h4>
+                                <p>Travail en étroite collaboration avec les équipes développement et opérations pour une culture DevOps forte</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="Image/322895941_741704226956251_1281742835380426626_n.jpg" alt="RAMANGALAHY Heriniaina Tiavina - DevOps Engineer" loading="lazy">
+                        </div>
+                        <div class="profile-info">
+                            <h3>RAMANGALAHY Heriniaina Tiavina</h3>
+                            <p>DevOps Engineer & Cloud Specialist</p>
+                            <div class="profile-stats">
+                                <div class="profile-stat">
+                                    <strong>3+</strong>
+                                    <span>Ans d'expérience</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <strong>50+</strong>
+                                    <span>Projets</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <strong>99%</strong>
+                                    <span>Satisfaction</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Démarrons Votre Projet</h2>
+                <p>Discutons de vos besoins en infrastructure et automation</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>ramangalahyheriniaina@gmail.com</p>
+                        <a href="mailto:ramangalahyheriniaina@gmail.com" class="contact-link">
+                            Envoyer un email <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+261 38 31 612 64</p>
+                        <a href="https://wa.me/261383161264" class="contact-link" target="_blank" rel="noopener">
+                            Discuter <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Localisation</h3>
+                        <p>Antananarivo, Madagascar</p>
+                        <span class="contact-link">Disponible en remote</span>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Disponibilité</h3>
+                        <p>Réponse sous 24h</p>
+                        <span class="contact-link">Support réactif</span>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Votre nom</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Votre email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder=" ">
+                            <label for="phone">Téléphone (optionnel)</label>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value=""></option>
+                                <option value="devops">Infrastructure DevOps</option>
+                                <option value="cloud">Migration Cloud</option>
+                                <option value="ci-cd">Pipeline CI/CD</option>
+                                <option value="monitoring">Monitoring & Observability</option>
+                                <option value="consulting">Consulting DevOps</option>
+                                <option value="formation">Formation & Coaching</option>
+                            </select>
+                            <label for="service">Type de service</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Décrivez votre projet</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Envoyer le message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo"></div>
+                    <span>DevOpsExpert</span>
+                </div>
+                <p>Des solutions cloud qui transforment votre infrastructure et accélèrent votre innovation</p>
+                <div class="footer-links">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#projets">Projets</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#apropos">À propos</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Docker Hub" target="_blank" rel="noopener"><i class="fab fa-docker"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DevOpsExpert. Tous droits réservés. | <a href="#" style="color: var(--text-muted);">Mentions légales</a> | <a href="#" style="color: var(--text-muted);">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
