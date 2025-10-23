@@ -1162,7 +1162,391 @@ section {
     font-size: 0.875rem;
 }
 
-/* Responsive */
+/* ==========================================================================
+   AMÉLIORATIONS MOBILE
+   ========================================================================== */
+
+/* Améliorations Mobile-First */
+@media (max-width: 768px) {
+    /* Navigation mobile améliorée */
+    .nav-container {
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg);
+        border-top: 1px solid var(--border);
+        padding: 2rem;
+        box-shadow: var(--shadow-lg);
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    .nav-link {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link.active::after {
+        display: none;
+    }
+    
+    /* Hero section mobile améliorée */
+    .hero-content {
+        padding: 5rem 0 2rem;
+        gap: 2rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-stats {
+        justify-content: space-around;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stat {
+        flex: 1;
+        min-width: 80px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Terminal window mobile */
+    .terminal-window {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .terminal-content {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Sections générales mobile */
+    section {
+        padding: 3rem 0;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-header p {
+        font-size: 1.1rem;
+    }
+    
+    /* Projets mobile amélioré */
+    .project-filters {
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    
+    /* Expertise mobile améliorée */
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .expertise-card {
+        padding: 1.5rem;
+    }
+    
+    .expertise-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+    
+    /* About section mobile améliorée */
+    .about-content {
+        gap: 2.5rem;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-features {
+        gap: 1.25rem;
+    }
+    
+    .feature {
+        gap: 0.875rem;
+    }
+    
+    .feature i {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .profile-container {
+        padding: 1.5rem;
+        max-width: 280px;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-stats {
+        gap: 1rem;
+    }
+    
+    /* Contact section mobile améliorée */
+    .contact-content {
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        gap: 1.25rem;
+    }
+    
+    .contact-card {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Footer mobile amélioré */
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-content {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-social {
+        gap: 0.75rem;
+    }
+    
+    .footer-social a {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .footer-bottom {
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Optimisations pour très petits écrans */
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .hero-content {
+        padding: 4rem 0 1.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .stat {
+        flex: 0 0 calc(50% - 0.5rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        flex: 0 0 calc(50% - 0.25rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .profile-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .profile-stat {
+        flex: 1;
+    }
+    
+    /* Amélioration de la lisibilité */
+    .terminal-content {
+        font-size: 0.75rem;
+        padding: 0.875rem;
+    }
+    
+    .terminal-header {
+        padding: 0.875rem 1rem;
+    }
+    
+    /* Espacement amélioré pour le touch */
+    .cta-button,
+    .filter-btn,
+    .project-link,
+    .contact-link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Meilleure hiérarchie visuelle */
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.75rem, 10vw, 2.5rem);
+    }
+}
+
+@media (max-width: 360px) {
+    /* Optimisations pour les très petits smartphones */
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stat {
+        flex: 1 0 100%;
+    }
+    
+    .project-filters {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        flex: 1 0 100%;
+    }
+    
+    .nav-links.active {
+        padding: 1.5rem;
+    }
+    
+    .expertise-card,
+    .contact-card,
+    .contact-form {
+        padding: 1.25rem;
+    }
+}
+
+/* Améliorations de l'expérience tactile */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button:hover,
+    .filter-btn:hover,
+    .project-card:hover,
+    .expertise-card:hover,
+    .contact-card:hover {
+        transform: none;
+    }
+    
+    .nav-link:hover {
+        color: var(--text-muted);
+    }
+    
+    .nav-link.active {
+        color: var(--primary);
+    }
+}
+
+/* Support des dispositifs avec notch */
+@supports(padding: max(0px)) {
+    .nav-container,
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+    
+    .hero {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .footer {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Responsive de base (conservé pour compatibilité) */
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -1189,19 +1573,6 @@ section {
     
     .nav-toggle {
         display: flex;
-    }
-    
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 1rem 2rem;
-        box-shadow: var(--shadow);
     }
     
     .hero-stats {
@@ -1263,349 +1634,5 @@ section {
     
     .filter-btn {
         width: 200px;
-    }
-}
-/* Améliorations Mobile */
-@media (max-width: 768px) {
-    /* Navigation améliorée */
-    .nav-container {
-        padding: 1rem;
-    }
-    
-    .nav-brand span {
-        font-size: 1.1rem;
-    }
-    
-    .nav-links.active {
-        padding: 2rem 1rem;
-        gap: 1.5rem;
-    }
-    
-    .nav-link {
-        padding: 0.75rem 0;
-        font-size: 1.1rem;
-        border-bottom: 1px solid var(--border);
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-link.active::after {
-        display: none;
-    }
-    
-    .nav-link.active {
-        background: var(--primary);
-        color: white;
-        border-radius: var(--radius);
-        border: none;
-    }
-    
-    /* Hero section améliorée */
-    .hero-content {
-        padding: 6rem 0 2rem;
-        gap: 2rem;
-    }
-    
-    .hero-title {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .hero-stats {
-        justify-content: space-around;
-        gap: 1rem;
-    }
-    
-    .stat {
-        flex: 1;
-        min-width: 80px;
-    }
-    
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    
-    .hero-actions {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .cta-button {
-        justify-content: center;
-        padding: 1.2rem 2rem;
-        font-size: 1.1rem;
-    }
-    
-    /* Terminal amélioré */
-    .terminal-window {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    
-    .terminal-content {
-        padding: 1rem;
-        font-size: 0.8rem;
-    }
-    
-    /* Sections améliorées */
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    
-    .section-header p {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-    }
-    
-    /* Filtres projets améliorés */
-    .project-filters {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0 1rem;
-    }
-    
-    .filter-btn {
-        flex: 1;
-        min-width: 120px;
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
-    }
-    
-    /* Grid projets améliorée */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-    
-    .project-card {
-        margin: 0 auto;
-        max-width: 400px;
-    }
-    
-    /* Expertise améliorée */
-    .expertise-grid {
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-    
-    .expertise-card {
-        padding: 1.5rem;
-    }
-    
-    .expertise-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.7rem;
-    }
-    
-    /* About amélioré */
-    .about-content {
-        gap: 2rem;
-    }
-    
-    .about-text h2 {
-        font-size: 2rem;
-    }
-    
-    .about-text p {
-        font-size: 1rem;
-    }
-    
-    .feature {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .feature i {
-        align-self: center;
-    }
-    
-    .profile-container {
-        padding: 1.5rem;
-        max-width: 100%;
-    }
-    
-    .profile-stats {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    /* Contact amélioré */
-    .contact-content {
-        gap: 2rem;
-    }
-    
-    .contact-info {
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-    
-    .contact-card {
-        padding: 1.5rem;
-        text-align: center;
-    }
-    
-    .contact-form {
-        padding: 1.5rem;
-        margin: 0 1rem;
-    }
-    
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-    
-    /* Footer amélioré */
-    .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .footer-social {
-        gap: 0.75rem;
-    }
-    
-    .footer-social a {
-        width: 45px;
-        height: 45px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Optimisations pour très petits écrans */
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .stat-number {
-        font-size: 1.3rem;
-    }
-    
-    .stat-label {
-        font-size: 0.8rem;
-    }
-    
-    .section-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .section-header p {
-        font-size: 1rem;
-    }
-    
-    .project-filters {
-        flex-direction: column;
-    }
-    
-    .filter-btn {
-        min-width: 100%;
-    }
-    
-    .terminal-header {
-        padding: 0.8rem 1rem;
-    }
-    
-    .terminal-content {
-        padding: 0.8rem;
-        font-size: 0.75rem;
-    }
-    
-    /* Amélioration de l'espacement */
-    section {
-        padding: 3rem 0;
-    }
-    
-    .container {
-        padding: 0 0.5rem;
-    }
-    
-    /* Boutons plus grands pour mobile */
-    .cta-button,
-    .submit-btn,
-    .filter-btn {
-        min-height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    /* Amélioration de la lisibilité */
-    .project-content h3,
-    .expertise-card h3,
-    .contact-card h3 {
-        font-size: 1.2rem;
-    }
-    
-    .project-content p,
-    .expertise-card p,
-    .contact-card p {
-        font-size: 0.95rem;
-    }
-}
-
-/* Correction pour le menu mobile */
-.nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Amélioration du scroll sur mobile */
-@media (max-width: 768px) {
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-    }
-    
-    section {
-        scroll-margin-top: 80px;
-    }
-}
-
-/* Correction des images responsives */
-.project-image img,
-.profile-image img {
-    width: 100%;
-    height: auto;
-}
-
-/* Amélioration des formulaires sur mobile */
-@media (max-width: 768px) {
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 16px; /* Empêche le zoom sur iOS */
-        padding: 1.2rem 1rem;
-    }
-    
-    .form-group label {
-        top: 1.2rem;
-    }
-    
-    .form-group input:focus + label,
-    .form-group select:focus + label,
-    .form-group textarea:focus + label,
-    .form-group input:not(:placeholder-shown) + label,
-    .form-group select:not(:placeholder-shown) + label,
-    .form-group textarea:not(:placeholder-shown) + label {
-        top: -0.3rem;
-        font-size: 0.7rem;
     }
 }
