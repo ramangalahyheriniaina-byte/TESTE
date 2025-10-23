@@ -18,7 +18,7 @@ function initApp() {
         }
     }, 2000);
 
-    // Navigation améliorée
+    // Navigation
     initNavigation();
     
     // Theme toggle
@@ -254,6 +254,22 @@ function initAnimations() {
             opacity: 0,
             duration: 0.5,
             delay: 0.3,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.hero-actions', {
+            y: 15,
+            opacity: 0,
+            duration: 0.5,
+            delay: 0.5,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.terminal-window', {
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            delay: 0.4,
             ease: 'power2.out'
         });
     }
